@@ -1,0 +1,44 @@
+{
+  "name": "backcountry-buildout",
+  "version": "1.0.0",
+  "description": "Outdoor clothing kit builder that references Backcountry.com's catalog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cskidz99/backcountry-buildout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cskidz99/backcountry-buildout/issues"
+  },
+  "homepage": "https://github.com/cskidz99/backcountry-buildout#readme",
+  "dependencies": {
+    "angular-route": "^1.5.9",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cachebust": "0.0.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-print": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "jsonwebtoken": "^7.1.9",
+    "massive": "^2.5.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth2": "^0.1.6",
+    "passport-local": "^1.0.0",
+    "passport-strava": "^0.2.0"
+  }
+}

@@ -1,0 +1,64 @@
+header {
+  display: flex;
+
+  button {
+    align-items: flex-end;
+  }
+}
+
+main {
+  display: flex;
+
+  .sidebar {
+    width: 300px;
+
+    .save-load-bldt {
+      margin-bottom: 20px;
+    }
+
+    .search-text {
+      margin-bottom: 20px;
+    }
+
+    .input-grp {
+      margin-bottom: 20px;
+
+      .gear-input {
+
+      }
+
+      .search-btn {
+
+      }
+    }
+  }
+
+  .bldt-area {
+    align-items: center;
+
+    .bldt-title {
+
+
+    }
+
+    .totals {
+
+    }
+
+    .head-row {
+
+      iframe:hover {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    .torso-hands-row {
+
+    }
+  }
+}
+
+footer {
+  text-align: center;
+}
