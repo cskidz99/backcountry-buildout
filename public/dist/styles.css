@@ -451,9 +451,8 @@ template {
   display: none; }
 
 header {
-  display: flex; }
-  header button {
-    align-items: flex-end; }
+  display: flex;
+  justify-content: space-between; }
 
 main {
   display: flex; }
@@ -465,13 +464,69 @@ main {
       margin-bottom: 20px; }
     main .sidebar .input-grp {
       margin-bottom: 20px; }
-  main .bldt-area {
+  main .bldt-area .bldt-info {
     align-items: center; }
-    main .bldt-area .head-row iframe:hover {
-      width: 500px;
-      height: 500px; }
+  main .bldt-area .head-row {
+    padding-left: 165px;
+    display: flex; }
+  main .bldt-area .torso-hands-row {
+    display: flex; }
+    main .bldt-area .torso-hands-row .hands-col {
+      width: 100px; }
+    main .bldt-area .torso-hands-row .torso-col {
+      display: flex; }
+  main .bldt-area .legs-row {
+    padding-left: 100px;
+    display: flex; }
+  main .bldt-area .feet-row {
+    padding-left: 150px;
+    display: flex; }
+  main .bldt-area .shoes-row {
+    padding-left: 150px;
+    display: flex; }
 
 footer {
-  text-align: center; }
+  text-align: center;
+  background-color: lightgrey; }
+
+#iframe-div-sml {
+  width: 90px;
+  height: 100px;
+  overflow: hidden;
+  position: relative; }
+
+#iframe-sml {
+  position: absolute;
+  top: -330px;
+  left: -5px;
+  width: 200px; }
+
+#iframe-div-sml:hover {
+  width: 500px;
+  height: 500px; }
+
+#iframe-sml:hover {
+  width: 100%;
+  top: 0; }
+
+#iframe-div-lrg {
+  width: 190px;
+  height: 200px;
+  overflow: hidden;
+  position: relative; }
+
+#iframe-lrg {
+  position: absolute;
+  top: -345px;
+  left: -5px;
+  width: 500px; }
+
+#iframe-div-lrg:hover {
+  width: 500px;
+  height: 500px; }
+
+#iframe-lrg:hover {
+  width: 100%;
+  top: 0; }
 
 /*# sourceMappingURL=maps/styles.css.map */

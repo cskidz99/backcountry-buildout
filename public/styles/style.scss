@@ -1,8 +1,9 @@
 header {
   display: flex;
+  justify-content: space-between;
 
   button {
-    align-items: flex-end;
+    // align-items: flex-end;
   }
 }
 
@@ -34,26 +35,67 @@ main {
   }
 
   .bldt-area {
-    align-items: center;
+    // align-items: center;
+    // overflow-x: scroll;
 
-    .bldt-title {
+    .bldt-info {
+      // display: flex;
+      // justify-content: center;
+      align-items: center;
+      .bldt-title {
+        // float: left;
 
+      }
+
+      .totals {
+        // display: flex;
+      }
 
     }
 
-    .totals {
 
-    }
 
     .head-row {
+      padding-left: 165px;
+      display: flex;
 
-      iframe:hover {
-        width: 500px;
-        height: 500px;
+
+      .head-box {
       }
+
+      // iframe:hover {
+      //   width: 500px;
+      //   height: 500px;
+      // }
     }
 
     .torso-hands-row {
+      display: flex;
+
+      .hands-col {
+        width: 100px;
+      }
+
+      .torso-col {
+        display: flex;
+
+      }
+
+    }
+
+    .legs-row {
+      padding-left: 100px;
+      display: flex;
+    }
+
+    .feet-row {
+      padding-left: 150px;
+      display: flex;
+    }
+
+    .shoes-row {
+      padding-left: 150px;
+      display: flex;
 
     }
   }
@@ -61,4 +103,51 @@ main {
 
 footer {
   text-align: center;
+  background-color: lightgrey;
+}
+
+#iframe-div-sml {
+    width    : 90px;
+    height   : 100px;
+    overflow : hidden;
+    position : relative;
+    // float: left;
+}
+
+#iframe-sml {
+    position : absolute;
+    top      : -330px;
+    left     : -5px;
+    width: 200px;
+}
+#iframe-div-sml:hover {
+  width: 500px;
+  height: 500px;
+}
+#iframe-sml:hover{
+  width: 100%;
+  top: 0;
+}
+
+#iframe-div-lrg {
+    width    : 190px;
+    height   : 200px;
+    overflow : hidden;
+    position : relative;
+    // float: left;
+}
+
+#iframe-lrg {
+    position : absolute;
+    top      : -345px;
+    left     : -5px;
+    width: 500px;
+}
+#iframe-div-lrg:hover {
+  width: 500px;
+  height: 500px;
+}
+#iframe-lrg:hover{
+  width: 100%;
+  top: 0;
 }
