@@ -1,7 +1,7 @@
 angular.module("bBuildout").controller("mainCtrl", function($scope, $state, $window, $sce){
     const baseUrl = "http://www.backcountry.com";
 
-    $scope.head1SearchUrl = $sce.trustAsResourceUrl(baseUrl);
+    // $scope.head1SearchUrl = $sce.trustAsResourceUrl(baseUrl);
     $scope.changeLocationHead1 = head1SearchTerm => {
         $scope.head1SearchUrl = $sce.trustAsResourceUrl(baseUrl + "/Store/catalog/search.jsp?s=u&q=" + head1SearchTerm);
     }
@@ -56,7 +56,7 @@ angular.module("bBuildout").controller("mainCtrl", function($scope, $state, $win
         $scope.torso5SearchUrl = $sce.trustAsResourceUrl(baseUrl + "/Store/catalog/search.jsp?s=u&q=" + torso5SearchTerm);
     }
 
-    $scope.legs1SearchUrl = $sce.trustAsResourceUrl(baseUrl);
+    // $scope.legs1SearchUrl = $sce.trustAsResourceUrl(baseUrl);
     $scope.changeLocationLegs1 = legs1SearchTerm => {
         $scope.legs1SearchUrl = $sce.trustAsResourceUrl(baseUrl + "/Store/catalog/search.jsp?s=u&q=" + legs1SearchTerm);
     }

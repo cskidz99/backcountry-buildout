@@ -22,7 +22,7 @@
     <div class="site-wrapper">
 
       <header>
-        <img src="" alt="site logo" height="50px" width="50px"></img>
+        <img src="./img/bbLogo.svg" alt="site logo" height="50px" width="50px" id="logo"></img>
         <h1>Backcountry Buildout</h1>
         <button class="log-out-btn">Log Out</button>
       </header>
@@ -77,9 +77,7 @@
               <button class="search-btn" ng-click="changeLocationFeet1(feet1SearchTerm)">Search</button>
             <input class="gear-input" id="feet2" ng-model="feet2SearchTerm" placeholder="feet2"></input>
               <button class="search-btn" ng-click="changeLocationFeet2(feet2SearchTerm)">Search</button>
-          </div>
-          <div class="input-grp">
-            <input class="gear-input" id="shoes1" ng-model="shoes1SearchTerm" placeholder="shoes1"></input>
+            <input class="gear-input" id="shoes1" ng-model="shoes1SearchTerm" placeholder="feet3"></input>
               <button class="search-btn" ng-click="changeLocationShoes1(shoes1SearchTerm)">Search</button>
           </div>
         </div>
@@ -93,14 +91,13 @@
             </div>
           </div>
           <div class="head-row">
-            <div id="iframe-div-sml"><iframe id="iframe-sml" class="head-box" ng-src={{head1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-            <div id="iframe-div-sml"><iframe id="iframe-sml" class="head-box" ng-src={{head2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+            <div id="iframe-div-sml" class="head-box"><iframe id="iframe-sml"  ng-src={{head1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+            <div id="iframe-div-sml" class="head-box"><iframe id="iframe-sml" ng-src={{head2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
           </div>
           <div class="torso-hands-row">
             <div class="hands-col">
               <div id="iframe-div-sml"><iframe id="iframe-sml" class="hands-box" ng-src={{hands1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
               <div id="iframe-div-sml"><iframe id="iframe-sml" class="hands-box" ng-src={{hands2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-              <!-- <div id="iframe-div-sml"><iframe id="iframe-sml" class="hands-box" ng-src={{hands3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div> -->
             </div>
             <div class="torso-col">
               <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="torso-box" ng-src={{torso1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
@@ -110,18 +107,28 @@
               <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="torso-box" ng-src={{torso5SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
             </div>
           </div>
-          <div class="legs-row">
-            <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-            <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-            <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-            <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs4SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div class="hand-legs-row">
+            <div class="hand-col">
+              <div id="iframe-div-sml"><iframe id="iframe-sml" class="hands-box" ng-src={{hands3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+            </div>
+            <div class="legs-col">
+              <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+              <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+              <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+              <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs4SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+            </div>
           </div>
           <div class="feet-row">
-            <div id="iframe-div-sml"><iframe id="iframe-sml" class="feet-box" ng-src={{feet1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-            <div id="iframe-div-sml"><iframe id="iframe-sml" class="feet-box" ng-src={{feet2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          </div>
-          <div class="shoes-row">
-            <div id="iframe-div-sml"><iframe id="iframe-sml" class="shoes-box" ng-src={{shoes1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+            <div class="feet-box">
+              <div id="iframe-div-sml"><iframe id="iframe-sml" ng-src={{feet1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+              <div id="iframe-div-sml"><iframe id="iframe-sml" ng-src={{feet1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+            </div>
+            <div class="feet-box">
+              <div id="iframe-div-sml"><iframe id="iframe-sml" ng-src={{feet2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+              <div id="iframe-div-sml"><iframe id="iframe-sml" ng-src={{feet2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+            </div>
+            <div id="iframe-div-sml" class="shoes-box"><iframe id="iframe-sml" ng-src={{shoes1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+            <div id="iframe-div-sml" class="shoes-box"><iframe id="iframe-sml" ng-src={{shoes1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
           </div>
         </div>
       </main>
