@@ -520,11 +520,10 @@ footer {
   width: 200px; }
 
 #iframe-div-sml:hover {
-  width: 190px;
+  height: 200px;
   transition-delay: 0.5s;
   transition-duration: 0.25s;
-  z-index: 1;
-  overflow: scroll; }
+  z-index: 1; }
 
 #iframe-sml:hover {
   transition-delay: 0.5s;
@@ -542,5 +541,11 @@ footer {
   top: -340px;
   left: -20px;
   width: 500px; }
+
+#iframe-div-lrg:hover {
+  height: 300px;
+  transition-delay: 0.5s;
+  transition-duration: 0.25s;
+  z-index: 1; }
 
 /*# sourceMappingURL=maps/styles.css.map */

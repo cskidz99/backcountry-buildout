@@ -67,8 +67,6 @@ main {
 
     }
 
-
-
     .head-row {
       padding-left: 155px;
       display: flex;
@@ -145,12 +143,12 @@ footer {
     width: 200px;
 }
 #iframe-div-sml:hover {
-  width: 190px;
-  // height: 500px;
+  // width: 190px;
+  height: 200px;
   transition-delay: 0.5s;
   transition-duration: 0.25s;
   z-index: 1;
-  overflow: scroll;
+  // overflow: scroll;
 }
 #iframe-sml:hover{
   // width: 100%;
@@ -173,14 +171,14 @@ footer {
     left     : -20px;
     width: 500px;
 }
-// #iframe-div-lrg:hover {
-//   width: 500px;
-//   height: 500px;
-//   transition-delay: 0.5s;
-//   transition-duration: 0.25s;
-//   z-index: 1;
-//
-// }
+#iframe-div-lrg:hover {
+  // width: 500px;
+  height: 300px;
+  transition-delay: 0.5s;
+  transition-duration: 0.25s;
+  z-index: 1;
+
+}
 // #iframe-lrg:hover{
 //   width: 100%;
 //   top: 0;
