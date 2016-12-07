@@ -2,14 +2,30 @@
   <header>
     <img src="./img/bbLogo.svg" alt="site logo" height="50px" width="50px" id="logo"></img>
     <h1>Backcountry Buildout</h1>
-    <img ng-src="{{user._json.profile}}"></img>
-    <button class="log-out-btn">Log Out</button>
+
+    <a ng-click="logoutUser()"><img ng-src="{{user._json.profile}}" height="75px" width="75px"></img></a>
   </header>
   <main>
     <div class="sidebar">
       <div class="save-load-bldt">
         <button class="bldt-btn" ng-click="saveBuild()">Save</button>
-        <button class="bldt-btn">Load</button>
+        <button class="bldt-btn" id="myBtn" ng-click="load">Load</button>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>Your Buildouts</h2>
+            </div>
+            <div class="modal-body">
+              <p ng-repeat="build in builds" ng-click="loadBuild(build)">{{build.buildout_name}}</p>
+            </div>
+            <div class="modal-footer">
+              <!-- <h3>Modal Footer</h3> -->
+            </div>
+          </div>
+        </div>
       </div>
       <div class="search-text">
         <h3>Select your gear here:</h3>

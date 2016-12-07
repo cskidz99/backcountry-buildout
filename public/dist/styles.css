@@ -450,6 +450,190 @@ template {
 [hidden] {
   display: none; }
 
+#iframe-div-sml {
+  width: 90px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  transition-duration: 0.25s; }
+
+#iframe-sml {
+  position: absolute;
+  top: -330px;
+  left: -5px;
+  width: 200px; }
+
+#iframe-div-sml:hover {
+  height: 200px;
+  transition-delay: 0.5s;
+  transition-duration: 0.25s;
+  z-index: 1; }
+
+#iframe-sml:hover {
+  transition-delay: 0.5s;
+  transition-duration: 0.25s; }
+
+#iframe-div-lrg {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  transition-duration: 0.25s; }
+
+#iframe-lrg {
+  position: absolute;
+  top: -340px;
+  left: -20px;
+  width: 500px; }
+
+#iframe-div-lrg:hover {
+  height: 300px;
+  transition-delay: 0.5s;
+  transition-duration: 0.25s;
+  z-index: 1; }
+
+.landing .landing-info {
+  display: flex;
+  justify-content: center;
+  padding-top: 25vh; }
+  .landing .landing-info .info-container {
+    width: 30vw;
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    padding: 1em; }
+    .landing .landing-info .info-container h1 {
+      text-align: center; }
+    .landing .landing-info .info-container h2 {
+      text-align: center;
+      padding-bottom: 1em; }
+
+.landing .fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100; }
+  .landing .fullscreen-bg .fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: -20%;
+    width: 140%;
+    height: 140%; }
+
+@media (min-aspect-ratio: 16 / 9) {
+  .landing .fullscreen-bg__video {
+    height: 300%;
+    top: -100%; } }
+
+@media (max-aspect-ratio: 16 / 9) {
+  .landing .fullscreen-bg__video {
+    width: 300%;
+    left: -100%; } }
+
+@media (max-width: 767px) {
+  .landing .fullscreen-bg {
+    background: url("./img/Agua-natural/Snapshots/Agua-natural.jpg") center center/cover no-repeat; }
+  .landing .fullscreen-bg__video {
+    display: none; } }
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */ }
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer; }
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white; }
+
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px; }
+  .modal-body p {
+    cursor: pointer; }
+  .modal-body p:hover,
+  .modal-body p:focus {
+    color: blue; }
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white; }
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s; }
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -459,9 +643,12 @@ header {
     fill: #2e6999;
     padding-top: 10px;
     align-items: center; }
+  header a {
+    cursor: pointer; }
 
 main {
-  display: flex; }
+  display: flex;
+  padding-bottom: 2em; }
   main .sidebar {
     width: 300px;
     padding-left: 10px; }
@@ -504,48 +691,11 @@ main {
 
 footer {
   text-align: center;
-  background-color: lightgrey; }
-
-#iframe-div-sml {
-  width: 90px;
-  height: 100px;
-  overflow: hidden;
-  position: relative;
-  transition-duration: 0.25s; }
-
-#iframe-sml {
-  position: absolute;
-  top: -330px;
-  left: -5px;
-  width: 200px; }
-
-#iframe-div-sml:hover {
-  height: 200px;
-  transition-delay: 0.5s;
-  transition-duration: 0.25s;
-  z-index: 1; }
-
-#iframe-sml:hover {
-  transition-delay: 0.5s;
-  transition-duration: 0.25s; }
-
-#iframe-div-lrg {
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-  transition-duration: 0.25s; }
-
-#iframe-lrg {
-  position: absolute;
-  top: -340px;
-  left: -20px;
-  width: 500px; }
-
-#iframe-div-lrg:hover {
-  height: 300px;
-  transition-delay: 0.5s;
-  transition-duration: 0.25s;
-  z-index: 1; }
+  background-color: lightgrey;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100vw;
+  padding: 0.25em; }
 
 /*# sourceMappingURL=maps/styles.css.map */

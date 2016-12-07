@@ -1,0 +1,71 @@
+.landing {
+
+  .landing-info {
+    display: flex;
+    justify-content: center;
+    padding-top: 25vh;
+
+    .info-container {
+      width: 30vw;
+      background-color: rgba(255, 255, 255, .4);
+      text-align: center;
+      padding: 1em;
+
+      h1 {
+        text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+        padding-bottom: 1em;
+      }
+
+      input {
+
+      }
+    }
+
+  }
+
+  .fullscreen-bg {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -100;
+
+      .fullscreen-bg__video {
+          position: absolute;
+          top: 0;
+          left: -20%;
+          width: 140%;
+          height: 140%;
+      }
+  }
+
+  @media (min-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      height: 300%;
+      top: -100%;
+    }
+  }
+
+  @media (max-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      width: 300%;
+      left: -100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .fullscreen-bg {
+      background: url('./img/Agua-natural/Snapshots/Agua-natural.jpg') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+      display: none;
+    }
+  }
+}

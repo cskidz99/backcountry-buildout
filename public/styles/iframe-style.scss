@@ -1,0 +1,57 @@
+#iframe-div-sml {
+    width    : 90px;
+    height   : 100px;
+    overflow : hidden;
+    position : relative;
+    transition-duration: 0.25s;
+}
+#iframe-sml {
+    position : absolute;
+    top      : -330px;
+    left     : -5px;
+    width: 200px;
+}
+#iframe-div-sml:hover {
+  // width: 190px;
+  height: 200px;
+  transition-delay: 0.5s;
+  transition-duration: 0.25s;
+  z-index: 1;
+  // overflow: scroll;
+}
+#iframe-sml:hover{
+  // width: 100%;
+  // top: 0;
+  transition-delay: 0.5s;
+  transition-duration: 0.25s;
+
+}
+
+#iframe-div-lrg {
+    width    : 200px;
+    height   : 200px;
+    overflow : hidden;
+    position : relative;
+    transition-duration: 0.25s;
+}
+#iframe-lrg {
+    position : absolute;
+    top      : -340px;
+    left     : -20px;
+    width: 500px;
+}
+#iframe-div-lrg:hover {
+  // width: 500px;
+  height: 300px;
+  transition-delay: 0.5s;
+  transition-duration: 0.25s;
+  z-index: 1;
+
+}
+// #iframe-lrg:hover{
+//   width: 100%;
+//   top: 0;
+//   transition-delay: 0.5s;
+//   transition-duration: 0.25s;
+//
+// }

@@ -21,6 +21,7 @@ var db = massive.connect({connectionString : connString},
     db.buildout_create_seed(function(){
       console.log("Buildout Table Init")
     });
+
 })
 
 passport.use(new FacebookStrategy({
@@ -77,7 +78,7 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', {
 	successRedirect: '/me',
 	failureRedirect: '/login'
 }), function(req, res) {
-	console.log(req.session);
+	// console.log(req.session);
 });
 
 app.get('/auth/strava', passport.authenticate('strava'));
@@ -91,12 +92,25 @@ app.get('/auth/strava/callback', passport.authenticate('strava', {
 
 app.get('/me', function(req,res,next){
   var user = req.user._json;
-  db.users.insert({strava_id: Number(user.id)}, function(err, user) {
-    console.log("Err", err)
-    console.log("User", user);
-    req.user.db_id = user.id;
-    res.send(req.user);
+  db.users.findOne({strava_id: Number(user.id)}, function(err, dbUser) {
+    if (!dbUser){
+      db.users.insert({strava_id: Number(user.id)}, function(err, user) {
+        // console.log("Err", err)
+        // console.log("User", user);
+        req.user.db_id = user.id;
+        res.send(req.user);
+      })
+    } else {
+      req.user.db_id = dbUser.id;
+      res.send(req.user);
+    }
   })
+});
+
+app.get('/logout', function(req,res,next){
+  req.logout();
+  res.redirect("/");
+  return;
 });
 
 app.get('/', function (req, res) {
@@ -104,13 +118,32 @@ app.get('/', function (req, res) {
   // console.log('hit');
 });
 
+app.get('/builds', function(req,res,next) {
+  console.log(req.user.db_id);
+  db.buildouts.find({ownerid: req.user.db_id}, function(err,builds){
+    console.log(builds);
+    return res.status(200).json(builds);
+  })
+});
+
 app.post('/builds', function(req, res, next) {
   console.log(req.body);
-  db.save_build([req.body.ownerId, req.body.buildName, req.body.build], function(err,build){
-    console.log(build);
+  db.buildouts.findOne({ownerid: req.body.ownerId, buildout_name: req.body.buildName}, function(err,existingBuild) {
+    if (!existingBuild){
+      db.save_build([req.body.ownerId, req.body.buildName, req.body.build], function(err,build){
+        console.log(build);
+      })
+    } else {
+      db.buildouts.update({id: existingBuild.id, buildout_urls: req.body.build}, function(err,buildout){
+        if (err){
+          return res.status(500).json(err);
+        }
+      })
+    }
   })
   return res.status(201).json(req.body);
-})
+});
+
 app.listen('3000', function(){
   console.log("Successfully listening on : 3000")
 });
