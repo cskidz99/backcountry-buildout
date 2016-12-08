@@ -79,6 +79,7 @@ main {
     .head-row {
       padding-left: 155px;
       display: flex;
+      height: 100px;
 
 
       .head-box {
@@ -93,6 +94,7 @@ main {
 
     .torso-hands-row {
       display: flex;
+      height: 200px;
 
       .hands-col {
         width: 100px;
@@ -119,6 +121,8 @@ main {
 
     .hand-legs-row {
       display: flex;
+      height: 200px;
+
 
       .hand-col {
         width: 100px;
@@ -144,6 +148,7 @@ main {
     .feet-row {
       padding-left: 120px;
       display: flex;
+      height: 100px;
 
       .feet-box {
         display: flex;

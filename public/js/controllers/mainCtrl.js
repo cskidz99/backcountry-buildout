@@ -303,15 +303,6 @@ angular.module("bBuildout").controller("mainCtrl", function($scope, $state, $win
         $scope.feet1SearchUrl = baseUrl + "/Store/catalog/search.jsp?s=u&q=" + feet1SearchTerm;
     }
 
-    $("#feet1").scroll(function () {
-        $("#feet2").scrollTop($("#feet1").scrollTop());
-        $("#feet2").scrollLeft($("#feet1").scrollLeft());
-    });
-    $("#feet2").scroll(function () {
-        $("#feet1").scrollTop($("#feet2").scrollTop());
-        $("#feet1").scrollLeft($("#feet2").scrollLeft());
-    });
-
     // $scope.feet2SearchUrl = baseUrl);
     $scope.changeLocationFeet2 = feet2SearchTerm => {
         $scope.feet2SearchUrl = baseUrl + "/Store/catalog/search.jsp?s=u&q=" + feet2SearchTerm;

@@ -480,7 +480,7 @@ template {
   position: relative;
   transition-duration: 0.25s; }
 
-#iframe-lrg {
+.iframe-lrg {
   position: absolute;
   top: -340px;
   left: -20px;
@@ -674,12 +674,14 @@ main {
         align-items: center; }
     main .bldt-area .head-row {
       padding-left: 155px;
-      display: flex; }
+      display: flex;
+      height: 100px; }
       main .bldt-area .head-row .head-box {
         margin-right: 105px;
         border: 1px solid black; }
     main .bldt-area .torso-hands-row {
-      display: flex; }
+      display: flex;
+      height: 200px; }
       main .bldt-area .torso-hands-row .hands-col {
         width: 100px;
         padding-left: 10px; }
@@ -690,7 +692,8 @@ main {
         main .bldt-area .torso-hands-row .torso-col .torso-box {
           border: 1px solid black; }
     main .bldt-area .hand-legs-row {
-      display: flex; }
+      display: flex;
+      height: 200px; }
       main .bldt-area .hand-legs-row .hand-col {
         width: 100px;
         padding-left: 10px; }
@@ -702,7 +705,8 @@ main {
           border: 1px solid black; }
     main .bldt-area .feet-row {
       padding-left: 120px;
-      display: flex; }
+      display: flex;
+      height: 100px; }
       main .bldt-area .feet-row .feet-box {
         display: flex;
         margin-right: 20px;

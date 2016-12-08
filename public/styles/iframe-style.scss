@@ -34,7 +34,7 @@
     position : relative;
     transition-duration: 0.25s;
 }
-#iframe-lrg {
+.iframe-lrg {
     position : absolute;
     top      : -340px;
     left     : -20px;
@@ -48,7 +48,7 @@
   z-index: 1;
 
 }
-// #iframe-lrg:hover{
+// .iframe-lrg:hover{
 //   width: 100%;
 //   top: 0;
 //   transition-delay: 0.5s;
