@@ -13,4 +13,7 @@ angular.module('bBuildout').service('mainSvc', function($http) {
   this.saveBuild = (urls) => {
     return $http.post('/builds', urls).then(res => res);
   }
+  this.deleteBuild = (id) => {
+    return $http.delete('/builds/' + id).then(res => res);
+  }
 })

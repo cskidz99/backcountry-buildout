@@ -3,6 +3,8 @@ header {
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+
 
   #logo {
     fill: rgb(46, 105, 153);
@@ -21,7 +23,7 @@ main {
 
   .sidebar {
     width: 300px;
-    padding-left: 10px;
+    padding: 10px;
 
     // border-right: solid 5px lightgrey;
 
@@ -48,8 +50,14 @@ main {
   }
 
   .bldt-area {
+    background-image: url('../img/mtn-bg.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     // align-items: center;
     // overflow-x: scroll;
+    // padding: 1em;
 
     .bldt-info {
       display: flex;
@@ -74,7 +82,8 @@ main {
 
 
       .head-box {
-        margin-right: 100px;
+        margin-right: 105px;
+        border: 1px solid black;
       }
       // iframe:hover {
       //   width: 500px;
@@ -87,10 +96,22 @@ main {
 
       .hands-col {
         width: 100px;
+        padding-left: 10px;
+
+        .hands-box {
+          border: 1px solid black;
+
+        }
+
       }
 
       .torso-col {
         display: flex;
+
+        .torso-box {
+          border: 1px solid black;
+
+        }
 
       }
 
@@ -101,27 +122,44 @@ main {
 
       .hand-col {
         width: 100px;
+        padding-left: 10px;
+
+        .hands-box {
+          border: 1px solid black;
+
+        }
+
       }
 
       .legs-col {
         display: flex;
+
+        .legs-box {
+          border: 1px solid black;
+
+        }
       }
     }
 
     .feet-row {
-      padding-left: 130px;
+      padding-left: 120px;
       display: flex;
 
       .feet-box {
         display: flex;
         margin-right: 20px;
+        border: 1px solid black;
+
+        .foot-box {
+
+        }
+
+        .shoe-box {
+
+        }
       }
     }
 
-    // .shoes-row {
-    //   padding-left: 140px;
-    //   display: flex;
-    // }
   }
 }
 

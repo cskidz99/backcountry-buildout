@@ -144,6 +144,17 @@ app.post('/builds', function(req, res, next) {
   return res.status(201).json(req.body);
 });
 
+app.delete('/builds/:id', function(req,res,next){
+  db.buildouts.destroy({id: req.params.id}, function(err,deletedBuild){
+    if (!err && deletedBuild.length){
+      db.buildouts.find({ownerid: req.user.db_id}, function(err,builds){
+        console.log(builds);
+        return res.status(200).json(builds);
+      })
+    }
+  })
+});
+
 app.listen('3000', function(){
   console.log("Successfully listening on : 3000")
 });

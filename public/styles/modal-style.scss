@@ -47,12 +47,12 @@
 .modal-body {
   padding: 2px 16px;
 
-  p {
+  .loaded-name {
     cursor: pointer;
   }
 
-  p:hover,
-  p:focus {
+  .loaded-name:hover,
+  .loaded-name:focus {
     color: blue;
   }
 }

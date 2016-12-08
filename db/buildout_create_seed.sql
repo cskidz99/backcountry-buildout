@@ -1,5 +1,5 @@
 -- DROP TABLE IF EXISTS buildouts;
-CREATE TABLE buildouts (
+CREATE TABLE IF NOT EXISTS buildouts (
   id SERIAL PRIMARY KEY,
   ownerId INTEGER,
   buildout_name TEXT,

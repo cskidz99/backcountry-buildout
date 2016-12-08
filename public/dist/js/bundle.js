@@ -13,32 +13,6 @@ angular.module('bBuildout', ['ui.router']).config(function ($sceProvider, $state
     controller: 'mainCtrl'
   });
 });
-'use strict';
-
-angular.module('bBuildout').service('mainSvc', function ($http) {
-
-  this.loginUser = function () {
-    console.log("Service Fired");
-    return $http.get('/me').then(function (res) {
-      return res;
-    });
-  };
-  this.logoutUser = function () {
-    return $http.get('/logout').then(function (res) {
-      return res;
-    });
-  };
-  this.getBuilds = function () {
-    return $http.get('/builds').then(function (res) {
-      return res;
-    });
-  };
-  this.saveBuild = function (urls) {
-    return $http.post('/builds', urls).then(function (res) {
-      return res;
-    });
-  };
-});
 "use strict";
 
 angular.module("bBuildout").controller("mainCtrl", function ($scope, $state, $window, $sce, mainSvc) {
@@ -116,29 +90,44 @@ angular.module("bBuildout").controller("mainCtrl", function ($scope, $state, $wi
         $scope.feet2SearchUrl = build.buildout_urls[15];
         $scope.shoes1SearchUrl = build.buildout_urls[16];
 
-        modal.style.display = "none";
+        modal2.style.display = "none";
     };
 
+    $scope.deleteBuild = function (id) {
+        mainSvc.deleteBuild(id).then(function (res) {
+            $scope.builds = res.data;
+        });
+    };
+    // Modal functions-----------------------
     // Get the modal
-    var modal = document.getElementById('myModal');
+    var modal1 = document.getElementById('myModal1');
+    var modal2 = document.getElementById('myModal2');
 
     // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+    var btn1 = document.getElementById("myBtn1");
+    var btn2 = document.getElementById("myBtn2");
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    var span1 = document.getElementsByClassName("close")[0];
+    var span2 = document.getElementsByClassName("close")[1];
 
     //Get the <p> element that displays the buildout name
     var name = document.getElementById("loadName");
 
     // When the user clicks on the button, open the modal
-    btn.onclick = function () {
-        modal.style.display = "block";
+    btn1.onclick = function () {
+        modal1.style.display = "block";
+    };
+    btn2.onclick = function () {
+        modal2.style.display = "block";
     };
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
+    span1.onclick = function () {
+        modal1.style.display = "none";
+    };
+    span2.onclick = function () {
+        modal2.style.display = "none";
     };
 
     // When the user clicks on <p>, close the modal
@@ -148,10 +137,85 @@ angular.module("bBuildout").controller("mainCtrl", function ($scope, $state, $wi
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+        if (event.target == modal1) {
+            modal1.style.display = "none";
         }
     };
+
+    // Clear button functions-------------
+    $scope.clrHead1 = function () {
+        $scope.head1SearchTerm = "";
+        $scope.head1SearchUrl = "";
+    };
+    $scope.clrHead2 = function () {
+        $scope.head2SearchTerm = "";
+        $scope.head2SearchUrl = "";
+    };
+    $scope.clrHands1 = function () {
+        $scope.hands1SearchTerm = "";
+        $scope.hands1SearchUrl = "";
+    };
+    $scope.clrHands2 = function () {
+        $scope.hands2SearchTerm = "";
+        $scope.hands2SearchUrl = "";
+    };
+    $scope.clrHands3 = function () {
+        $scope.hands3SearchTerm = "";
+        $scope.hands3SearchUrl = "";
+    };
+    $scope.clrTorso1 = function () {
+        $scope.torso1SearchTerm = "";
+        $scope.torso1SearchUrl = "";
+    };
+    $scope.clrTorso2 = function () {
+        $scope.torso2SearchTerm = "";
+        $scope.torso2SearchUrl = "";
+    };
+    $scope.clrTorso3 = function () {
+        $scope.torso3SearchTerm = "";
+        $scope.torso3SearchUrl = "";
+    };
+    $scope.clrTorso4 = function () {
+        $scope.torso4SearchTerm = "";
+        $scope.torso4SearchUrl = "";
+    };
+    $scope.clrTorso5 = function () {
+        $scope.torso5SearchTerm = "";
+        $scope.torso5SearchUrl = "";
+    };
+    $scope.clrLegs1 = function () {
+        $scope.legs1SearchTerm = "";
+        $scope.legs1SearchUrl = "";
+    };
+    $scope.clrLegs2 = function () {
+        $scope.legs2SearchTerm = "";
+        $scope.legs2SearchUrl = "";
+    };
+    $scope.clrLegs3 = function () {
+        $scope.legs3SearchTerm = "";
+        $scope.legs3SearchUrl = "";
+    };
+    $scope.clrLegs4 = function () {
+        $scope.legs4SearchTerm = "";
+        $scope.legs4SearchUrl = "";
+    };
+    $scope.clrFeet1 = function () {
+        $scope.feet1SearchTerm = "";
+        $scope.feet1SearchUrl = "";
+    };
+    $scope.clrFeet2 = function () {
+        $scope.feet2SearchTerm = "";
+        $scope.feet2SearchUrl = "";
+    };
+    $scope.clrFeet3 = function () {
+        $scope.shoes1SearchTerm = "";
+        $scope.shoes1SearchUrl = "";
+    };
+
+    //iFrame functions-----------------
     // $scope.head1SearchUrl = baseUrl);
     $scope.changeLocationHead1 = function (head1SearchTerm) {
         $scope.head1SearchUrl = baseUrl + "/Store/catalog/search.jsp?s=u&q=" + head1SearchTerm;
@@ -237,6 +301,15 @@ angular.module("bBuildout").controller("mainCtrl", function ($scope, $state, $wi
         $scope.feet1SearchUrl = baseUrl + "/Store/catalog/search.jsp?s=u&q=" + feet1SearchTerm;
     };
 
+    $("#feet1").scroll(function () {
+        $("#feet2").scrollTop($("#feet1").scrollTop());
+        $("#feet2").scrollLeft($("#feet1").scrollLeft());
+    });
+    $("#feet2").scroll(function () {
+        $("#feet1").scrollTop($("#feet2").scrollTop());
+        $("#feet1").scrollLeft($("#feet2").scrollLeft());
+    });
+
     // $scope.feet2SearchUrl = baseUrl);
     $scope.changeLocationFeet2 = function (feet2SearchTerm) {
         $scope.feet2SearchUrl = baseUrl + "/Store/catalog/search.jsp?s=u&q=" + feet2SearchTerm;
@@ -246,5 +319,36 @@ angular.module("bBuildout").controller("mainCtrl", function ($scope, $state, $wi
     $scope.changeLocationShoes1 = function (shoes1SearchTerm) {
         $scope.shoes1SearchUrl = baseUrl + "/Store/catalog/search.jsp?s=u&q=" + shoes1SearchTerm;
     };
+});
+'use strict';
+
+angular.module('bBuildout').service('mainSvc', function ($http) {
+
+  this.loginUser = function () {
+    console.log("Service Fired");
+    return $http.get('/me').then(function (res) {
+      return res;
+    });
+  };
+  this.logoutUser = function () {
+    return $http.get('/logout').then(function (res) {
+      return res;
+    });
+  };
+  this.getBuilds = function () {
+    return $http.get('/builds').then(function (res) {
+      return res;
+    });
+  };
+  this.saveBuild = function (urls) {
+    return $http.post('/builds', urls).then(function (res) {
+      return res;
+    });
+  };
+  this.deleteBuild = function (id) {
+    return $http.delete('/builds/' + id).then(function (res) {
+      return res;
+    });
+  };
 });
 //# sourceMappingURL=bundle.js.map

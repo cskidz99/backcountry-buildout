@@ -8,24 +8,39 @@
   <main>
     <div class="sidebar">
       <div class="save-load-bldt">
-        <button class="bldt-btn" ng-click="saveBuild()">Save</button>
-        <button class="bldt-btn" id="myBtn" ng-click="load">Load</button>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-          <!-- Modal content -->
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close">×</span>
-              <h2>Your Buildouts</h2>
-            </div>
-            <div class="modal-body">
-              <p ng-repeat="build in builds" ng-click="loadBuild(build)">{{build.buildout_name}}</p>
-            </div>
-            <div class="modal-footer">
-              <!-- <h3>Modal Footer</h3> -->
+        <button class="bldt-btn" id="myBtn1" ng-click="saveBuild()">Save</button>
+          <!-- The Modal -->
+          <div id="myModal1" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">×</span>
+              </div>
+              <div class="modal-body">
+                <p>Buildout saved!</p>
+              </div>
+              <div class="modal-footer">
+                <!-- <h3>Modal Footer</h3> -->
+              </div>
             </div>
           </div>
-        </div>
+        <button class="bldt-btn" id="myBtn2" ng-click="load">Load</button>
+          <!-- The Modal -->
+          <div id="myModal2" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Your Buildouts</h2>
+              </div>
+              <div class="modal-body">
+                <p class="loaded-name" ng-repeat="build in builds"><span ng-click="loadBuild(build)">{{build.buildout_name}}</span><button ng-click="deleteBuild(build.id)">×</button></p>
+              </div>
+              <div class="modal-footer">
+                <!-- <h3>Modal Footer</h3> -->
+              </div>
+            </div>
+          </div>
       </div>
       <div class="search-text">
         <h3>Select your gear here:</h3>
@@ -33,96 +48,116 @@
       <div class="input-grp">
         <input class="gear-input" id="head1" ng-model="head1SearchTerm" placeholder="head1"></input>
           <button class="search-btn" ng-click="changeLocationHead1(head1SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrHead1()">×</button>
         <input class="gear-input" id="head2" ng-model="head2SearchTerm" placeholder="head2"></input>
           <button class="search-btn" ng-click="changeLocationHead2(head2SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrHead2()">×</button>
       </div>
       <div class="input-grp">
         <input class="gear-input" id="hands1" ng-model="hands1SearchTerm" placeholder="hands1"></input>
           <button class="search-btn" ng-click="changeLocationHands1(hands1SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrHands1()">×</button>
         <input class="gear-input" id="hands2" ng-model="hands2SearchTerm" placeholder="hands2"></input>
           <button class="search-btn" ng-click="changeLocationHands2(hands2SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrHands2()">×</button>
         <input class="gear-input" id="hands3" ng-model="hands3SearchTerm" placeholder="hands3"></input>
           <button class="search-btn" ng-click="changeLocationHands3(hands3SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrHands3()">×</button>
       </div>
       <div class="input-grp">
         <input class="gear-input" id="torso1" ng-model="torso1SearchTerm" placeholder="torso1"></input>
           <button class="search-btn" ng-click="changeLocationTorso1(torso1SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrTorso1()">×</button>
         <input class="gear-input" id="torso2" ng-model="torso2SearchTerm" placeholder="torso2"></input>
           <button class="search-btn" ng-click="changeLocationTorso2(torso2SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrTorso2()">×</button>
         <input class="gear-input" id="torso3" ng-model="torso3SearchTerm" placeholder="torso3"></input>
           <button class="search-btn" ng-click="changeLocationTorso3(torso3SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrTorso3()">×</button>
         <input class="gear-input" id="torso4" ng-model="torso4SearchTerm" placeholder="torso4"></input>
           <button class="search-btn" ng-click="changeLocationTorso4(torso4SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrTorso4()">×</button>
         <input class="gear-input" id="torso5" ng-model="torso5SearchTerm" placeholder="torso5"></input>
           <button class="search-btn" ng-click="changeLocationTorso5(torso5SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrTorso5()">×</button>
+
       </div>
       <div class="input-grp">
         <input class="gear-input" id="legs1" ng-model="legs1SearchTerm" placeholder="legs1"></input>
           <button class="search-btn" ng-click="changeLocationLegs1(legs1SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrLegs1()">×</button>
         <input class="gear-input" id="legs2" ng-model="legs2SearchTerm" placeholder="legs2"></input>
           <button class="search-btn" ng-click="changeLocationLegs2(legs2SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrLegs2()">×</button>
         <input class="gear-input" id="legs3" ng-model="legs3SearchTerm" placeholder="legs3"></input>
           <button class="search-btn" ng-click="changeLocationLegs3(legs3SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrLegs3()">×</button>
         <input class="gear-input" id="legs4" ng-model="legs4SearchTerm" placeholder="legs4"></input>
           <button class="search-btn" ng-click="changeLocationLegs4(legs4SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrLegs4()">×</button>
       </div>
       <div class="input-grp">
         <input class="gear-input" id="feet1" ng-model="feet1SearchTerm" placeholder="feet1"></input>
           <button class="search-btn" ng-click="changeLocationFeet1(feet1SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrFeet1()">×</button>
         <input class="gear-input" id="feet2" ng-model="feet2SearchTerm" placeholder="feet2"></input>
           <button class="search-btn" ng-click="changeLocationFeet2(feet2SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrFeet2()">×</button>
         <input class="gear-input" id="shoes1" ng-model="shoes1SearchTerm" placeholder="feet3"></input>
           <button class="search-btn" ng-click="changeLocationShoes1(shoes1SearchTerm)">Search</button>
+          <button class="clr-btn" ng-click="clrFeet3()">×</button>
       </div>
     </div>
 
     <div class="bldt-area">
       <div class="bldt-info">
         <h2><input class="bldt-title" placeholder="Name your buildout:" ng-model="buildName"></input></h2>
-        <div class="totals">
+        <!-- <div class="totals">
           <h3>Total Cost: ${{cost}}</h3>
           <h3>Total Weight: {{weight}}</h3>
-        </div>
+        </div> -->
       </div>
       <div class="head-row">
-        <div id="iframe-div-sml" class="head-box"><iframe id="iframe-sml"  ng-src={{head1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-        <div id="iframe-div-sml" class="head-box"><iframe id="iframe-sml" ng-src={{head2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+        <div id="iframe-div-sml" class="head-box"><iframe ng-show="head1SearchUrl" class="iframe-sml"  ng-src={{head1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+        <div id="iframe-div-sml" class="head-box"><iframe ng-show="head2SearchUrl" class="iframe-sml" ng-src={{head2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
       </div>
       <div class="torso-hands-row">
         <div class="hands-col">
-          <div id="iframe-div-sml"><iframe id="iframe-sml" class="hands-box" ng-src={{hands1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-sml"><iframe id="iframe-sml" class="hands-box" ng-src={{hands2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-sml" class="hands-box"><iframe ng-show="hands1SearchUrl" class="iframe-sml" ng-src={{hands1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-sml" class="hands-box"><iframe ng-show="hands2SearchUrl" class="iframe-sml" ng-src={{hands2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
         </div>
         <div class="torso-col">
-          <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="torso-box" ng-src={{torso1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="torso-box" ng-src={{torso2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="torso-box" ng-src={{torso3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="torso-box" ng-src={{torso4SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="torso-box" ng-src={{torso5SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-lrg" class="torso-box"><iframe ng-show="torso1SearchUrl" id="iframe-lrg"  ng-src={{torso1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-lrg" class="torso-box"><iframe ng-show="torso2SearchUrl" id="iframe-lrg" ng-src={{torso2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-lrg" class="torso-box"><iframe ng-show="torso3SearchUrl" id="iframe-lrg" ng-src={{torso3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-lrg" class="torso-box"><iframe ng-show="torso4SearchUrl" id="iframe-lrg" ng-src={{torso4SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-lrg" class="torso-box"><iframe ng-show="torso5SearchUrl" id="iframe-lrg" ng-src={{torso5SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
         </div>
       </div>
       <div class="hand-legs-row">
         <div class="hand-col">
-          <div id="iframe-div-sml"><iframe id="iframe-sml" class="hands-box" ng-src={{hands3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-sml" class="hands-box"><iframe ng-show="hands3SearchUrl" class="iframe-sml"  ng-src={{hands3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
         </div>
         <div class="legs-col">
-          <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-lrg"><iframe id="iframe-lrg" class="legs-box" ng-src={{legs4SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-lrg" class="legs-box"><iframe ng-show="legs1SearchUrl" id="iframe-lrg" ng-src={{legs1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-lrg" class="legs-box"><iframe ng-show="legs2SearchUrl" id="iframe-lrg" ng-src={{legs2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-lrg" class="legs-box"><iframe ng-show="legs3SearchUrl" id="iframe-lrg" ng-src={{legs3SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-lrg" class="legs-box"><iframe ng-show="legs4SearchUrl" id="iframe-lrg" ng-src={{legs4SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
         </div>
       </div>
       <div class="feet-row">
         <div class="feet-box">
-          <div id="iframe-div-sml"><iframe id="iframe-sml" ng-src={{feet1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-sml"><iframe id="iframe-sml" ng-src={{feet1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-sml" class="foot-box"><iframe ng-show="feet1SearchUrl" class="iframe-sml" id="feet1" ng-src={{feet1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-sml" class="foot-box"><iframe ng-show="feet1SearchUrl" class="iframe-sml" id="feet2" ng-src={{feet1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
         </div>
         <div class="feet-box">
-          <div id="iframe-div-sml"><iframe id="iframe-sml" ng-src={{feet2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-          <div id="iframe-div-sml"><iframe id="iframe-sml" ng-src={{feet2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-sml" class="foot-box"><iframe ng-show="feet2SearchUrl" class="iframe-sml" ng-src={{feet2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-sml" class="foot-box"><iframe ng-show="feet2SearchUrl" class="iframe-sml" ng-src={{feet2SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
         </div>
-        <div id="iframe-div-sml" class="shoes-box"><iframe id="iframe-sml" ng-src={{shoes1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
-        <div id="iframe-div-sml" class="shoes-box"><iframe id="iframe-sml" ng-src={{shoes1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+        <div class="feet-box">
+          <div id="iframe-div-sml" class="shoe-box"><iframe ng-show="shoes1SearchUrl" class="iframe-sml" ng-src={{shoes1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+          <div id="iframe-div-sml" class="shoe-box"><iframe ng-show="shoes1SearchUrl" class="iframe-sml" ng-src={{shoes1SearchUrl}} height="800" width="1000" frameborder="0"></iframe></div>
+        </div>
       </div>
     </div>
   </main>
